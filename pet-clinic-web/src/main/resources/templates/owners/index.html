@@ -2,28 +2,28 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List of Pet Owners</title>
+    <title>List of Owners</title>
 </head>
 <body>
-<!--/*@thymesVar id="owner" type="jon.martinez.sfgpetclinic.model.Owner"*/-->
-    <h1 th:text="'List of Owners'">Owner List</h1>
 
-    <table>
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="owner : ${owners}">
-            <td th:text="${owner?.id}">1</td>
-            <td th:text="${owner?.firstname}">Joe</td>
-            <td th:text="${owner?.lastName}">Buck</td>
-        </tr>
-        </tbody>
-    </table>
+<h1 th:text="'List of Owners'">List of Owners...</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="owner : ${owners}">
+        <td th:text="${owner.getId()}">1</td>
+        <td th:text="${owner.getFirstname()}">Joe</td>
+        <td th:text="${owner.getLastName()}">Buck</td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>

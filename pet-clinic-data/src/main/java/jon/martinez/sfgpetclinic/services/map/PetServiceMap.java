@@ -5,7 +5,6 @@ import jon.martinez.sfgpetclinic.services.CrudService;
 import jon.martinez.sfgpetclinic.services.PetService;
 import org.springframework.stereotype.Service;
 
-import javax.xml.ws.ServiceMode;
 import java.util.Set;
 
 @Service
