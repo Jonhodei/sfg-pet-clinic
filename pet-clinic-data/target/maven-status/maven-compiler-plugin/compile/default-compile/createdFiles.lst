@@ -1,5 +1,14 @@
+jon\martinez\sfgpetclinic\services\map\PetServiceMap.class
+jon\martinez\sfgpetclinic\services\OwnerService.class
+jon\martinez\sfgpetclinic\model\BaseEntity.class
+jon\martinez\sfgpetclinic\services\map\VetServiceMap.class
+jon\martinez\sfgpetclinic\model\PetType.class
+jon\martinez\sfgpetclinic\services\map\OwnerServiceMap.class
+jon\martinez\sfgpetclinic\services\CrudService.class
+jon\martinez\sfgpetclinic\services\VetService.class
 jon\martinez\sfgpetclinic\model\Owner.class
 jon\martinez\sfgpetclinic\model\Vet.class
 jon\martinez\sfgpetclinic\model\Person.class
 jon\martinez\sfgpetclinic\model\Pet.class
-jon\martinez\sfgpetclinic\model\PetType.class
+jon\martinez\sfgpetclinic\services\map\AbstractMapService.class
+jon\martinez\sfgpetclinic\services\PetService.class
