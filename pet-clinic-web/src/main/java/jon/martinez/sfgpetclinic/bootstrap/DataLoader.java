@@ -1,10 +1,7 @@
 package jon.martinez.sfgpetclinic.bootstrap;
 
 import jon.martinez.sfgpetclinic.model.*;
-import jon.martinez.sfgpetclinic.services.OwnerService;
-import jon.martinez.sfgpetclinic.services.PetTypeService;
-import jon.martinez.sfgpetclinic.services.SpecialtyService;
-import jon.martinez.sfgpetclinic.services.VetService;
+import jon.martinez.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -79,7 +78,7 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("123 Brickerel");
         owner2.setCity("Miami");
         owner2.setTelephone("1231231234");
-        ownerService.save(owner2);
+
 
         Pet fionasCat = new Pet();
         fionasCat.setName("Just Cat");
@@ -87,6 +86,16 @@ public class DataLoader implements CommandLineRunner {
         fionasCat.setBirthdate(LocalDate.now());
         fionasCat.setPetType(savedCatPetType);
         owner2.getPets().add(fionasCat);
+
+        ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
+
 
         Vet vet1 = new Vet();
         vet1.setFirstname("Sam");
